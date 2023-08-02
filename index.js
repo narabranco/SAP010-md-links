@@ -1,4 +1,4 @@
-//importando fileSystem para utilizar funcoes prontas
+//importando modulo fileSystem nativo do node para utilizar funcoes prontas
 //https://nodejs.org/dist/latest-v18.x/docs/api/fs.html#fsreadfilepath-options-callback
 const fs = require('fs');
 const filePath = './README.md';
