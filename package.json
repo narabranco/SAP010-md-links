@@ -8,5 +8,35 @@
     "createdAt": "2023-06-19T12:25:44.680Z",
     "version": "6.3.0",
     "commit": "c17498042fc79734cec390e6314cbe810e95bf4c"
-  }
+  },
+  "dependencies": {
+    "chalk": "^4.1.2"
+  },
+  "description": "## Índice",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {
+    "jest": "^29.6.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/narabranco/SAP010-md-links.git"
+  },
+  "keywords": [
+    "node",
+    "markdown",
+    "CLI",
+    "API"
+  ],
+  "author": "naraBranco <älice2013brandao@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/narabranco/SAP010-md-links/issues"
+  },
+  "homepage": "https://github.com/narabranco/SAP010-md-links#readme"
 }

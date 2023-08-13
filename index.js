@@ -1,12 +1,36 @@
-//importando modulo fileSystem nativo do node para utilizar funcoes prontas
-//https://nodejs.org/dist/latest-v18.x/docs/api/fs.html#fsreadfilepath-options-callback
+
+
+
 const fs = require('fs');
 const filePath = './README.md';
-//funcao pronta do fileSystem que retorna o conteudo do arquivo ou o erro
-fs.readFile(filePath, 'utf8', (err, data) => {
-  if (err) {
-    console.error("[*] Failed => ", err);
-    return;
-  }
-  console.log("[*] Sucess \n\n\n\n", data);
-});
+
+function getlinks(file) {
+  return new Promise((resolve, reject) => {
+    fs.readFile(file, 'utf8', (err, data) => {
+      if (err) {
+        reject(err);
+      } else {
+        const regex = /\[(.+?)\]\((http[s]?:\/\/[^\s]+)\)/g;
+        const links = [];
+        let match;
+
+        while ((match = regex.exec(data)) !== null) {
+          links.push({
+            href: match[2],
+            text: match[1],
+            file: file, 
+          });
+        }
+
+        // Adicionando logs para verificar os links encontrados
+        console.log("Links encontrados:");
+        console.log(links);
+
+        resolve(links);
+      }
+    });
+  });
+}
+
+module.exports = { getlinks }
+
